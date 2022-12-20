@@ -1,5 +1,5 @@
-import './ExpenseItem.css'
-import ExpenseDate from './ExpenseDate'
+import ExpenseDate from './ExpenseDate';
+import './ExpenseItem.css';
 
 function ExpenseItem(props) {
   return (
@@ -10,7 +10,7 @@ function ExpenseItem(props) {
         <div className='expense-item__price'>${props.amount}</div>
       </div>
     </div>
-  )
+  );
 }
 
-export default ExpenseItem
+export default ExpenseItem;
