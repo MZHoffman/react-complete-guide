@@ -1,12 +1,19 @@
-import React from 'react';
+import React, {useState} from 'react'
 
-import ExpenseItem from './ExpenseItem';
-import Card from '../UI/Card';
-import './Expenses.css';
+import ExpenseItem from './ExpenseItem'
+import ExpensesFilter from './ExpensesFilter'
+import Card from '../UI/Card'
+import './Expenses.css'
 
 const Expenses = (props) => {
+  const [year, setYea]
+  const selectedYear = (year) => {
+    console.log(year)
+  }
+
   return (
-    <Card className="expenses">
+    <Card className='expenses'>
+      <ExpensesFilter selectedYear={selectedYear} />
       <ExpenseItem
         title={props.items[0].title}
         amount={props.items[0].amount}
@@ -28,7 +35,7 @@ const Expenses = (props) => {
         date={props.items[3].date}
       />
     </Card>
-  );
+  )
 }
 
-export default Expenses;
+export default Expenses
