@@ -13,23 +13,20 @@ const Expenses = (props) => {
     //test = dropdownYear
     //console.log(test)
   }
-
+  const filteredExpanses = props.items.filter((expense) => {
+    return expense.date.getFullYear().toString() === dropdownYear
+  })
   return (
     <Card className='expenses'>
       <ExpensesFilter selected={dropdownYear} onSelectedYear={selectedYear} />
-      {props.items
-        .map((expense) => (
-          <ExpenseItem
-            key={expense.id}
-            title={expense.title}
-            amount={expense.amount}
-            date={expense.date}
-          />
-        ))
-        .filter(
-          (expense) =>
-            expense.props.date.getFullYear().toString() === dropdownYear
-        )}
+      {filteredExpanses.map((expense) => (
+        <ExpenseItem
+          key={expense.id}
+          title={expense.title}
+          amount={expense.amount}
+          date={expense.date}
+        />
+      ))}
     </Card>
   )
 }
