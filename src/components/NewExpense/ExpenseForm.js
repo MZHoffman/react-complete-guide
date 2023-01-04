@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './ExpenseForm.css'
+import Card from '../UI/Card'
 
 const ExpenseForm = (props) => {
   const [enteredTitle, setEnteredTitle] = useState('')
@@ -61,6 +62,9 @@ const ExpenseForm = (props) => {
         </div>
         <div className='new-expense__actions'>
           <button type='submit'>Add Expense</button>
+        </div>
+        <div className='new-expense__actions'>
+          <button onClick={() => props.toggleForm(false)}>Cancel</button>
         </div>
       </div>
     </form>
