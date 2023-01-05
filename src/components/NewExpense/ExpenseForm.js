@@ -64,7 +64,7 @@ const ExpenseForm = (props) => {
           <button type='submit'>Add Expense</button>
         </div>
         <div className='new-expense__actions'>
-          <button onClick={() => props.changeVisibility(false)}>Cancel</button>
+          <button onClick={props.changeVisibility}>Cancel</button>
         </div>
       </div>
     </form>
